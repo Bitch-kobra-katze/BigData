@@ -5,14 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //BitVector1 test = new BitVector1(8);
-        //test.print();
-        //test.mutator(4,1);
-        //Byte i = test.accessor(4);
-        //test.print();
-        //System.out.println("Accessor "+i);
-        //System.out.println(te);
-
         // initialize boomfiler
         BoomFilter boomfilet = new BoomFilter( 3,30);
 
@@ -54,5 +46,6 @@ public class Main {
             }
 
         }
+
     }
 }

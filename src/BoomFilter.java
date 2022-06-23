@@ -29,9 +29,7 @@ public class BoomFilter {
         }
         // nicht gebracuht ende
         for(Integer i : compareHashCodes){
-            if(vector.accessor(i) == 1){
-                continue;
-            } else {
+            if(vector.accessor(i) != 1){
                 return false;
             }
 
