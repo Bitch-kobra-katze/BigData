@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 
 public class Main {
@@ -19,58 +20,39 @@ public class Main {
         // add six elements - current flase positiv???
         System.out.println("---Exercice 3a)------------------------------------------");
         int elemntCounter = 0;
-        boomfilet.addElement("halloWorld");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Pruefunsphase");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Mittagspause");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Vorlesung");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Einheitskreis");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Projektarbeit");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
-        boomfilet.addElement("Verfügbarkeit");
-        elemntCounter++;
-        System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/elemntCounter))), 3) );
+        String[] elementArray = {"halloWorld", "Pruefunsphase", "Mittagspause", "Vorlesung", "Einheitskreis", "Projektarbeit", "Verfügbarkeit"};
+
+        for(int i = 0; i < elementArray.length; i++){
+            boomfilet.addElement(elementArray[i]);
+            //FalsePos
+            System.out.println( Math.pow(( 1 - Math.pow(Math.E, ((-90)/(i+1)))), 3) );
+        }
 
         // b)
         System.out.println("---Exercice 3b)------------------------------------------");
         boomfilet.vector.print();
-        Boolean exists = boomfilet.checkIfElementExists("der");
-        Boolean exists1 = boomfilet.checkIfElementExists("die");
-        Boolean exists2 = boomfilet.checkIfElementExists("das");
-        Boolean exists3 = boomfilet.checkIfElementExists("den");
-        Boolean exists4 = boomfilet.checkIfElementExists("wem");
-        Boolean exists5 = boomfilet.checkIfElementExists("dann");
-        System.out.println(exists+" "+exists1+" "+exists2+" "+exists3+" "+exists4+" "+exists5+" ");
+        String[] compareElementArray = {"der", "die", "das", "den", "wem", "dann"};
+
+        for(int i = 0; i < compareElementArray.length; i++){
+            Boolean exists = boomfilet.checkIfElementExists(compareElementArray[i]);
+            System.out.println(compareElementArray[i]+" "+ exists+ " \n");
+        }
 
         // c)
         System.out.println("---Exercice 3c)------------------------------------------");
-        boomfilet.addElement("Montag");
-        boomfilet.addElement("Dienstag");
-        boomfilet.addElement("Mittwoch");
-        boomfilet.addElement("Donnerstag");
-        boomfilet.addElement("Freitag");
-        boomfilet.addElement("Samstag");
-        boomfilet.addElement("Sonntag");
+        String[] otherElementArray = {"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"};
+        for (String s : otherElementArray) {
+            boomfilet.addElement(s);
+        }
 
         // d)
         System.out.println("---Exercice 3d)------------------------------------------");
-        Boolean existsAgain = boomfilet.checkIfElementExists("der");
-        Boolean exists1Again = boomfilet.checkIfElementExists("die");
-        Boolean exists2Again = boomfilet.checkIfElementExists("das");
-        Boolean exists3Again = boomfilet.checkIfElementExists("den");
-        Boolean exists4Again = boomfilet.checkIfElementExists("wem");
-        Boolean exists5Again = boomfilet.checkIfElementExists("dann");
-        System.out.println(existsAgain+" "+exists1Again+" "+exists2Again+" "+exists3Again+" "+exists4Again+" "+exists5Again+" ");
-        System.out.println("element 'dann'");
+        for(int i = 0; i < compareElementArray.length; i++){
+            Boolean exists = boomfilet.checkIfElementExists(compareElementArray[i]);
+            if( exists){
+                System.out.println("Element "+compareElementArray[i]+" is now false-"+ exists+ " \n");
+            }
+
+        }
     }
 }
