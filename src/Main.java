@@ -1,4 +1,4 @@
-
+import java.sql.SQLOutput;
 
 public class Main {
 
@@ -61,5 +61,16 @@ public class Main {
         boomfilet.addElement("Freitag");
         boomfilet.addElement("Samstag");
         boomfilet.addElement("Sonntag");
+
+        // d)
+        System.out.println("---Exercice 3d)------------------------------------------");
+        Boolean existsAgain = boomfilet.checkIfElementExists("der");
+        Boolean exists1Again = boomfilet.checkIfElementExists("die");
+        Boolean exists2Again = boomfilet.checkIfElementExists("das");
+        Boolean exists3Again = boomfilet.checkIfElementExists("den");
+        Boolean exists4Again = boomfilet.checkIfElementExists("wem");
+        Boolean exists5Again = boomfilet.checkIfElementExists("dann");
+        System.out.println(existsAgain+" "+exists1Again+" "+exists2Again+" "+exists3Again+" "+exists4Again+" "+exists5Again+" ");
+        System.out.println("element 'dann'");
     }
 }
